@@ -3,7 +3,9 @@ import {
   View, Text, StyleSheet, TouchableOpacity, Alert, FlatList,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { shape, string, instanceOf, arrayOf } from 'prop-types';
+import {
+  shape, string, instanceOf, arrayOf,
+} from 'prop-types';
 
 import Icon from './Icon';
 
@@ -16,7 +18,7 @@ export default function MemoList(props) {
       <TouchableOpacity
         style={styles.memoListItem}
         onPress={() => { navigation.navigate('MemoDetail'); }}
-        >
+      >
         <View>
           <Text style={styles.memoListItemTitle} numberOfLines={1}>{item.bodyText}</Text>
           <Text style={styles.memoListItemDate}>{String(item.updatedAt)}</Text>
