@@ -20,10 +20,10 @@ export default function MemoList(props) {
     if (currentUser) {
       const db = firebase.firestore();
       const ref = db.collection(`users/${currentUser.uid}/memos`).doc(id);
-      Alert.alert('メモを削除します','よろしいですか？',[
+      Alert.alert('メモを削除します', 'よろしいですか？', [
         {
           text: 'キャンセル',
-          onPress: () => {}
+          onPress: () => {},
         },
         {
           text: '削除する',

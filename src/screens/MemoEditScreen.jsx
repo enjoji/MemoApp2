@@ -10,12 +10,14 @@ import KeyboardSafeView from '../components/KeyboardSafeView';
 import { translateErrors } from '../utils';
 
 export default function MemoEditScreen(props) {
+  // eslint-disable-next-line react/prop-types
   const { navigation, route } = props;
+  // eslint-disable-next-line react/prop-types
   const { id, bodyText } = route.params;
   const [body, setBody] = useState(bodyText);
 
   function handlePress() {
-    const { currentUser } =firebase.auth();
+    const { currentUser } = firebase.auth();
     if (currentUser) {
       const db = firebase.firestore();
       const ref = db.collection(`users/${currentUser.uid}/memos`).doc(id);
@@ -32,7 +34,6 @@ export default function MemoEditScreen(props) {
         });
     }
   }
-
 
   return (
     <KeyboardSafeView style={styles.container} behavior="height">
